@@ -1,0 +1,16 @@
+<h1>My tasks</h1>
+<ol>
+<div class='grid'>
+ <% @tasks.each do |task| %>
+<li>
+ <label for="accept">
+ <input type="checkbox" id="accept" name="accept" >
+ </label>
+<%= link_to task.title, task_path(task.id) %> -
+<%= link_to 'Delete', destroy_task_path(task), method: :delete %>
+</li>
+<%end%>
+</div>
+</ol>
+<hr>
+<button> <%= link_to 'add new', tasks_new_path %> </button>
